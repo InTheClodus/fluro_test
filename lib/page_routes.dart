@@ -27,8 +27,8 @@ enum PageName { login_page, home_page, class_detail_page }
 final Map<PageName, PageBuilder> pageRoutes = {
   PageName.login_page: PageBuilder(builder: (bundler) => const LoginPage()),
   PageName.home_page: PageBuilder(builder: (bundler) => HomePage(bundler)),
-  PageName.class_detail_page:
-      PageBuilder(builder: (bundler) => ClassDetailPage(bundle: bundler)),
+  // PageName.class_detail_page:
+  //     PageBuilder(builder: (bundler) => ClassDetailPage(bundle: bundler)),
 };
 
 class LoginPage extends StatefulWidget {
