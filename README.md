@@ -1,16 +1,17 @@
 # fluro_test
 
-A new Flutter project.
+对fluro使用的封装
+简化了Handler(handlerFunc的写法，不需要每添加一个页面就写一次Handler(handlerFunc
+使用Bundle来约束传参的类型,不过使用Bundle就无法使用 fluro的 navigateTo 方法
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### 使用示例
+## 传递多个参数
+```dart
+        Navigator.pushNamed(context, PageName.home_page.toString(),
+            arguments: Bundle()..putInt("id", 12312)..putString("name", "v"));
+```
+## 传递单个参数
+```dart
+        Navigator.pushNamed(context, PageName.home_page.toString(),
+            arguments: Bundle()..putInt("id", 12312));
+```

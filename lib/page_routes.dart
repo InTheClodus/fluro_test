@@ -28,7 +28,7 @@ final Map<PageName, PageBuilder> pageRoutes = {
   PageName.login_page: PageBuilder(builder: (bundler) => const LoginPage()),
   PageName.home_page: PageBuilder(builder: (bundler) => HomePage(bundler)),
   PageName.class_detail_page:
-      PageBuilder(builder: (bundler) => ClassDetailPage(bundler)),
+      PageBuilder(builder: (bundler) => ClassDetailPage(bundle: bundler)),
 };
 
 class LoginPage extends StatefulWidget {
@@ -42,7 +42,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("登錄")),
+      appBar: AppBar(title: const Text("登錄")),
       body: FloatingActionButton(onPressed: () {
         Navigator.pushNamed(context, PageName.home_page.toString(),
             arguments: Bundle()..putInt("id", 12312)..putString("name", "v"));
@@ -79,8 +79,8 @@ class _HomePageState extends State<HomePage> {
 }
 
 class ClassDetailPage extends StatefulWidget {
-  const ClassDetailPage(this.bundle, {Key? key}) : super(key: key);
-  final Bundle bundle;
+  const ClassDetailPage({Key? key,this.bundle}) : super(key: key);
+  final Bundle? bundle;
 
   @override
   _ClassDetailPageState createState() => _ClassDetailPageState();
